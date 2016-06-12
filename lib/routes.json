@@ -1,0 +1,24 @@
+{
+  "/users": {
+    "controller": "users",
+    "post": {
+      "operation": "createUser"
+    }
+  },
+  "/users/:userId": {
+    "auth": true,
+    "controller": "users",
+    "get": {
+      "operation": "getUser"
+    }
+  },
+  "/login": {
+    "controller": "sessions",
+    "post": {
+      "operation": "createSession"
+    },
+    "delete": { 
+      "operation": "deleteSession"
+    }
+  }
+}
