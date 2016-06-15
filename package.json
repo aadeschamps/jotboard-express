@@ -6,7 +6,9 @@
   "scripts": {
     "test": "test",
     "start": "node ./bin/startApp.js",
-    "build": "rm -rf node_modules && npm install"
+    "build": "rm -rf node_modules && npm install",
+    "migration": "db-migrate -m ./db/migrations --config ./db/database.json",
+    "migrate": "db-migrate -m ./db/migrations --config ./db/database.json up"
   },
   "keywords": [
     "jotboard"
@@ -17,6 +19,7 @@
     "babel-core": "^6.5.2",
     "body-parser": "^1.15.1",
     "config": "^1.21.0",
+    "db-migrate": "^0.9.25",
     "express": "^4.13.4",
     "express-promise": "^0.4.0",
     "lodash": "^4.13.1",
