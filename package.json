@@ -4,7 +4,7 @@
   "description": "An application to experiment in real time collaboration",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "mocha --recursive test",
     "start": "node ./bin/startApp.js",
     "build": "rm -rf node_modules && npm install",
     "migration": "db-migrate -m ./db/migrations --config ./db/database.json",
