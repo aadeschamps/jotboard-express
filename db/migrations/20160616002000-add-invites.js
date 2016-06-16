@@ -3,16 +3,15 @@ var type = dbm.dataType;
 
 exports.up = function(db, callback) {
   let sql = `
-    CREATE TABLE boards (
+    CREATE TABLE invites (
       id SERIAL PRIMARY KEY,
-      title text,
-      owner int references users(id),
-      code text
+      user_id int references users(id),
+      board_id int references boards(id)
     )
   `
   db.runSql(sql, callback);
 };
 
 exports.down = function(db, callback) {
-  db.dropTable('boards', callback);
+  db.dropTable('invites', callback);
 };
