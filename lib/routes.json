@@ -1,18 +1,18 @@
 {
-  "/users": {
+  "/api/users": {
     "controller": "users",
     "post": {
       "operation": "createUser"
     }
   },
-  "/users/:userId": {
+  "/api/users/:userId": {
     "auth": true,
     "controller": "users",
     "get": {
       "operation": "getUser"
     }
   },
-  "/login": {
+  "/api/sessions": {
     "controller": "sessions",
     "post": {
       "operation": "createSession"
