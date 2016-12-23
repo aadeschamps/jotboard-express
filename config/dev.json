@@ -5,6 +5,9 @@
   "logger": {
     "logStyle": "dev"
   },
+  "auth": {
+    "secret": "danielleisawesome"
+  },
   "database": {
     "host": "localhost",
     "port": 5432,
