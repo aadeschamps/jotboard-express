@@ -25,12 +25,13 @@ class LoginForm extends React.Component {
         e.preventDefault();
         axios.post('/api/sessions', this.state)
             .then((res) => {
-                console.log(res);
                 this.setState({
                     email: '',
                     password: '',
                     errors: {}
                 });
+                console.log('logging in');
+                this.props.login();
             })
             .catch((err) => {
                 var error = {};
