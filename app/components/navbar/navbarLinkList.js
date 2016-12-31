@@ -17,13 +17,12 @@ class NavbarLinkList extends React.Component {
         e.preventDefault();
         axios.delete('/api/sessions', this.state)
             .then((res) => {
-                console.log('logging out');
                 this.props.logout();
             });
     }
 
     chooseLink() {
-        if(this.props.loggedIn) {
+        if(this.props.user) {
             return (
                 <li>
                     <NavLink
@@ -46,7 +45,7 @@ class NavbarLinkList extends React.Component {
     }
 
     signupLink() {
-        if (!this.props.loggedIn) {
+        if (!this.props.user) {
             return (
                 <li>
                     <NavLink

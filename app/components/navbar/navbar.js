@@ -11,7 +11,7 @@ class Navbar extends React.Component {
                 </div>
                 <div className='navbar-right'>
                     <NavbarLinkList
-                        loggedIn={this.props.loggedIn}
+                        user={this.props.user}
                         logout={this.props.logOff}
                     />
                 </div>

@@ -30,8 +30,7 @@ class LoginForm extends React.Component {
                     password: '',
                     errors: {}
                 });
-                console.log('logging in');
-                this.props.login();
+                this.props.login(res.data);
             })
             .catch((err) => {
                 var error = {};
@@ -59,7 +58,7 @@ class LoginForm extends React.Component {
                     value={this.state.password}
                     error={this.state.errors.password}
                 />
-                <button onClick={this.onSubmit} > Login </button>                
+                <button className='btn btn-primary' onClick={this.onSubmit} > Login </button>                
             </form>
             
         )

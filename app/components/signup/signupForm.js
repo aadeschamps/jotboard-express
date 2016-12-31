@@ -67,7 +67,7 @@ class SignupForm extends React.Component {
                     value={this.state.passwordConfirmation}
                     error={this.state.errors.passwordConfirmation}
                 />
-                <button onClick={this.onSubmit} > Submit </button>                
+                <button className='btn btn-primary' onClick={this.onSubmit} > Submit </button>                
             </form>
             
         )
