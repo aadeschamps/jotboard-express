@@ -45,14 +45,6 @@ class App extends React.Component {
         this.load();
     }
 
-    greeting() {
-        let user = _.get(this.state, 'user.email') || 'stranger'; 
-
-        return (
-            <h1> Welcome, {user} </h1>
-        )
-    }
-
     render() {
         const childrenWithProps = React.Children.map(this.props.children,
             (child) => React.cloneElement(child, {

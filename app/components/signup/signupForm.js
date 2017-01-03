@@ -70,7 +70,7 @@ class SignupForm extends React.Component {
                         value={this.state.passwordConfirmation}
                         error={this.state.errors.passwordConfirmation}
                     />
-                    <button className='btn waves-light' onClick={this.onSubmit} > Submit </button>                
+                    <button className='btn waves-light blue-grey darken-3' onClick={this.onSubmit} > Submit </button>                
                 </form>
             </div>
         )

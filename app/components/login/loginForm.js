@@ -59,7 +59,7 @@ class LoginForm extends React.Component {
                         value={this.state.password}
                         error={this.state.errors.password}
                     />
-                    <button className='btn btn-primary' onClick={this.onSubmit} > Login </button>                
+                    <button className='btn waves-effect waves-light blue-grey darken-3' onClick={this.onSubmit} > Login </button>                
                 </form>
             </div>
         )
