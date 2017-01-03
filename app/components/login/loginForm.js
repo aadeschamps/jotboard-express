@@ -41,26 +41,27 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <form>
-                <FormField
-                    label='Email'
-                    name='email'
-                    type='text'
-                    onChange={this.onChange}
-                    value={this.state.email}
-                    error={this.state.errors.email}
-                />
-                <FormField
-                    label='Password'
-                    name='password'
-                    type='text'
-                    onChange={this.onChange}
-                    value={this.state.password}
-                    error={this.state.errors.password}
-                />
-                <button className='btn btn-primary' onClick={this.onSubmit} > Login </button>                
-            </form>
-            
+            <div className='row'>
+                <form className='col s6 offset-s3'>
+                    <FormField
+                        label='Email'
+                        name='email'
+                        type='text'
+                        onChange={this.onChange}
+                        value={this.state.email}
+                        error={this.state.errors.email}
+                    />
+                    <FormField
+                        label='Password'
+                        name='password'
+                        type='text'
+                        onChange={this.onChange}
+                        value={this.state.password}
+                        error={this.state.errors.password}
+                    />
+                    <button className='btn btn-primary' onClick={this.onSubmit} > Login </button>                
+                </form>
+            </div>
         )
     }
 }

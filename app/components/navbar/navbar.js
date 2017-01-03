@@ -1,21 +1,19 @@
 import React from 'react';
-import NavbarLinkList from './navbarLinkList';
+import LinkList from './linkList';
 import Logo from './logo';
 
 class Navbar extends React.Component {
     render() {
         return (
-            <div>
-                <div className='navbar-left nav navbar-nav'>
+            <nav className='row'>
+                <div className='nav-wrapper blue-grey darken-3'>
                     <Logo />
-                </div>
-                <div className='navbar-right'>
-                    <NavbarLinkList
+                    <LinkList
                         user={this.props.user}
                         logout={this.props.logOff}
                     />
                 </div>
-            </div>
+            </nav>
         )
     }
 }

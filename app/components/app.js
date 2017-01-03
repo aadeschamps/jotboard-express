@@ -63,18 +63,13 @@ class App extends React.Component {
         );
 
         return (
-            <div className='container-fluid'>
-                <div className='col-md-12 navbar-default container-fluid'>
-                    <Navbar 
-                        user={this.state.user}
-                        logOff={this.logOff}
-                    />
-                </div>
-                <div className='col-md-6 col-md-offset-3'>
+            <div>
+                <Navbar
+                    user={this.state.user}
+                    logOff={this.logOff}
+                />
+                <div className='container'>
                     {childrenWithProps}
-                </div>
-                <div>
-                    {this.greeting()}
                 </div>
             </div>
         );

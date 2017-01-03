@@ -5,7 +5,7 @@ class Logo extends React.Component {
 
     render() {
         return (
-            <div className='navbar-header'>
+            <div className='brand-logo'>
                 <NavLink
                     className='navbar-brand'
                     to='/'

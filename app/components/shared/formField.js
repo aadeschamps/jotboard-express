@@ -18,16 +18,19 @@ class FormField extends React.Component {
 
     render() {
         return (
-            <div className='form'>
-                <label> {this.props.label} </label>
-                <input 
-                    className='form-control'
+            <div className='row'>
+            <div className='input-field'>
+                <input
+                    id={this.props.name}
+                    className='validate'
                     type={this.props.type}
                     name={this.props.name}
                     onChange={this.props.onChange}
                     value={this.props.value}
                 />
-                { this.renderError() }
+                <label htmlFor={this.props.name} data-error={this.props.error}> {this.props.label} </label>
+                {this.renderError()}
+            </div>
             </div>
         )
     }

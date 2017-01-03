@@ -1,6 +1,7 @@
 import React from 'react';
 import FormField from '../shared/formField';
 import axios from 'axios'
+import { browserHistory } from 'react-router';
 
 class SignupForm extends React.Component {
 
@@ -32,6 +33,7 @@ class SignupForm extends React.Component {
                     passwordConfirmation: '',
                     errors: {}
                 });
+                browserHistory.push('/login');
             })
             .catch((err) => {
                 var error = {};
@@ -42,34 +44,35 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-            <form>
-                <FormField
-                    label='Email'
-                    name='email'
-                    type='text'
-                    onChange={this.onChange}
-                    value={this.state.email}
-                    error={this.state.errors.email}
-                />
-                <FormField
-                    label='Password'
-                    name='password'
-                    type='text'
-                    onChange={this.onChange}
-                    value={this.state.password}
-                    error={this.state.errors.password}
-                />
-                <FormField
-                    label='Password Confirmation'
-                    name='passwordConfirmation'
-                    type='text'
-                    onChange={this.onChange}
-                    value={this.state.passwordConfirmation}
-                    error={this.state.errors.passwordConfirmation}
-                />
-                <button className='btn btn-primary' onClick={this.onSubmit} > Submit </button>                
-            </form>
-            
+            <div className='row'>
+                <form className='col s6 offset-s3'>
+                    <FormField
+                        label='Email'
+                        name='email'
+                        type='text'
+                        onChange={this.onChange}
+                        value={this.state.email}
+                        error={this.state.errors.email}
+                    />
+                    <FormField
+                        label='Password'
+                        name='password'
+                        type='text'
+                        onChange={this.onChange}
+                        value={this.state.password}
+                        error={this.state.errors.password}
+                    />
+                    <FormField
+                        label='Password Confirmation'
+                        name='passwordConfirmation'
+                        type='text'
+                        onChange={this.onChange}
+                        value={this.state.passwordConfirmation}
+                        error={this.state.errors.passwordConfirmation}
+                    />
+                    <button className='btn waves-light' onClick={this.onSubmit} > Submit </button>                
+                </form>
+            </div>
         )
     }
 }
