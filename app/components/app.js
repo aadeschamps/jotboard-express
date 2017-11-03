@@ -15,8 +15,9 @@ class App extends React.Component {
             loaded: false
         }
         this.login = this.login.bind(this);
-        this.logOff = this.logOff.bind(this);
+        this.logout = this.logout.bind(this);
         this.load = this.load.bind(this);
+        this.loading = this.loading.bind(this);
     }
 
     load() {
@@ -27,16 +28,16 @@ class App extends React.Component {
             })
             .catch((err) => {
                 // TODO: correctly handle error here
-                console.log(err);
+                this.setState({ loaded: true })
             });
     }
 
     login(user) {
         this.setState({ user })
-        browserHistory.push('/');
+        browserHistory.push('/boards');
     }
 
-    logOff() {
+    logout() {
         this.setState({ user: null })
         browserHistory.push('/login');
     }
@@ -45,23 +46,29 @@ class App extends React.Component {
         this.load();
     }
 
+    loading() {
+        return (
+            <h1> Loading </h1>
+        )
+    }
+
     render() {
         const childrenWithProps = React.Children.map(this.props.children,
             (child) => React.cloneElement(child, {
                 user: this.state.user,
-                logOff: this.logOff,
+                logout: this.logout,
                 login: this.login
             })
         );
-
+        
         return (
             <div>
                 <Navbar
                     user={this.state.user}
-                    logOff={this.logOff}
+                    logout={this.logout}
                 />
                 <div className='container'>
-                    {childrenWithProps}
+                    { this.state.loaded ? childrenWithProps : this.loading()}
                 </div>
             </div>
         );

@@ -3,20 +3,14 @@ import { Link } from 'react-router';
 
 const noop = () => {};
 
-class NavLink extends React.Component {
-
-    render() {
-        return (
-            <Link 
-                className={this.props.className}
-                to={this.props.to}
-                onClick={this.props.onClick || noop}
-            > 
-                {this.props.text}
-            </Link>
-        );
-    }
-
+export default ({ className, to, onClick, text }) => {
+    return (
+        <Link 
+            className={className}
+            to={to}
+            onClick={onClick || noop}
+        > 
+            {text}
+        </Link>
+    );
 };
-
-export default NavLink;
